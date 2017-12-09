@@ -1,0 +1,12 @@
+section{
+    width: 100vw;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-title{
+    color: white;
+    font-size: 40px;
+}
