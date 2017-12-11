@@ -1,59 +1,100 @@
 .search-input{
-    border-radius: 5px;
+    position: fixed;
+    top: 85px;
+    left: 525px;
+    width: 150px;
+    height: 30px;
+    border-radius: 10px;
     border: none;
 }
 .content{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: block;
+    
 }
  .list{
-    width: 30%;
+    position: static;
+    float: left;
+    width: 40%;
     height: 900px;
-    margin: 50px 0 0 150px;
-    color: gray;
+    color: rgb(255, 255, 255);
     border: 2px solid rgb(103, 100, 100);
     border-radius: 4px;
+    margin-top: 180px;
+    margin-left: 40px;
+    padding: 10px;
+    background-color: #5b5b5b;
+    box-shadow: 10px 15px #000000;
 }
 .playlist{
-    position: absolute;
-    top: 220px;
-    right: 200px;
-    color: gray;
+    height: 900px;
+    width: 40%;
+    float: right;
+    color: rgb(255, 255, 255);
     border: 2px solid rgb(103, 100, 100);
     border-radius: 4px;
+    margin-top: 180px;
+    margin-right: 40px;
+    padding: 10px;
+    word-wrap: break-word;
+    background-color: #5b5b5b;
+    box-shadow: 10px 15px #000000;
 }
 .playlist-title{
     position: absolute;
-    top: 175px;
-    right: 400px;
+    top: 160px;
+    right: 520px;
     color: gray;
 }
 .search-title{
     position: absolute;
-    top: 175px;
-    left: 375fpx;
+    top: 160px;
+    left: 42px;
     color: gray;
 }
 .playlist-items{
-    color: gray;
+    color: rgb(255, 255, 255);
 }
 .playlist-button{
     background: none;
     border: none;
     color: white;
+    font-size: 20px;
+}
+.playlistload-button{
+    position: absolute;
+    top: 130px;
+    right: 260px;
+    width: 100px;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(182, 182, 182);
+}
+.search-button{
+    position: fixed;
+    top: 85px;
+    left: 676.5px;
+    width: 80px;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(182, 182, 182)
+    
 }
 .button-delete{
     background: none;
     border: none;
+    font-size: 20px
 }
 .button-up{
     background: none;
     border: none;
+    font-size: 20px;
 }
 .button-down{
     background: none;
     border: none;
+    font-size: 20px;
 }
 .search-fields{
     display: flex;

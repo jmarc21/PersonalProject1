@@ -11,7 +11,9 @@ class App extends Component {
     return (
       <div className='app'>
         <Header />
-        <Search />
+
+        <Search className='search'/>
+        
       </div>
     );
   }

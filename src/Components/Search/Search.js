@@ -97,7 +97,7 @@ export default class Search extends Component {
                     <p>Title: {e.trackName}</p>
                     <p>Album: {e.collectionName}</p>
                     <p>Genre: {e.primaryGenreName}</p>
-                    <button className='playlist-button' onClick={() => this.addToPlaylist(e.artistName, e.trackName, e.collectionName, e.primaryGenreName)}>Add to playlist</button>
+                    <button className='playlist-button' onClick={() => this.addToPlaylist(e.artistName, e.trackName, e.collectionName, e.primaryGenreName)}>✙</button>
                 </div>
             )
         })
@@ -119,10 +119,8 @@ export default class Search extends Component {
 
         return (
             <div className='screen'>
-                <div className='top-half'></div>
-                <div className='bottom-half'></div>
                 <div className='search-fields'>
-                    <input className='search-input' onChange={e => this.updateArtistsFirst(e.target.value)} placeholder='Search For Music' />
+                    <input className='search-input' onChange={e => this.updateArtistsFirst(e.target.value)} placeholder=' Search For Music' />
                     <button className='search-button' onClick={() => this.getArtist()}>Search</button>
                     <button className='playlistload-button' onClick={() => this.loadPlaylist()}>Load Playlist</button>
                 </div>
