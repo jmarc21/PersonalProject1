@@ -1,9 +1,6 @@
-.screen{
-   
-}
 .search-input{
-    margin: 0 0 0 150px;
     border-radius: 5px;
+    border: none;
 }
 .content{
     display: flex;
@@ -32,6 +29,12 @@
     right: 400px;
     color: gray;
 }
+.search-title{
+    position: absolute;
+    top: 175px;
+    left: 375fpx;
+    color: gray;
+}
 .playlist-items{
     color: gray;
 }
@@ -51,4 +54,8 @@
 .button-down{
     background: none;
     border: none;
+}
+.search-fields{
+    display: flex;
+    justify-content: center;
 }

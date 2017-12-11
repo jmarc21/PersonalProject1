@@ -8,7 +8,7 @@ module.exports = {
         res.status(200).send(playlist);
     },
     read: (req, res) => {
-
+        res.status(200).send(playlist);
     },
     updateup: (req, res) => {
         let p = Number(req.params.id);
