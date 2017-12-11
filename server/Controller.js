@@ -1,29 +1,50 @@
 var playlist = [];
-var id = 0;
 
 module.exports = {
     create: (req, res) => {
-        // console.log("req.body", req.body)
-        // console.log("req.body.a - d", req.body.a, req.body.b, req.body.c, req.body.d)
-        let { a, b, c, d } = req.body
-        playlist.push({ a, b, c, d });
+        let { a, b, c, d,id } = req.body
+        id = id + 1;
+        playlist.push({ a, b, c, d, id });
         res.status(200).send(playlist);
     },
     read: (req, res) => {
 
     },
-    update: (req, res) => {
-        let id = req.params.id;
+    updateup: (req, res) => {
+        let p = Number(req.params.id);
         let {a,b,c,d} = req.body;
-        let playlistIndex = playlist.findIndex(playlist => playlist.id == id)
-        playlist.splice(playlistIndex,1)
-        var x = playlistIndex++;
-        playlist.splice(x,0,{a,b,c,d})
-        res.status(200).send(playlist);
+
+        var x = p-=1;
+        var y = p+=1;
+
+        if(playlist.length <= 1||y==0){
+            res.send(playlist)
+        }else{
+        var temp = playlist[p]
+        playlist[p] = playlist[x]
+        playlist[x] = temp;
+
+        res.status(200).send(playlist);}
+    },
+    updatedown: (req, res) => {
+        let p = Number(req.params.id);
+        let {a,b,c,d} = req.body;
+
+        var x = p+=1;
+        var y = p-=1;
+
+        if(playlist.length <= 1||y==playlist.length-1){
+            res.send(playlist)
+        }else{
+        var temp = playlist[p]
+        playlist[p] = playlist[x]
+        playlist[x] = temp;
+
+        res.status(200).send(playlist);}
     },
     remove: (req, res) => {
-        let id = req.params.id;
-        playlist.splice(id,1)
+        let p = Number(req.params.id);
+        playlist.splice(p,1)
         res.status(200).send(playlist);
     }
 }

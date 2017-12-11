@@ -9,8 +9,7 @@ export default class Search extends Component {
             artistfirst: '',
             artistlast: '',
             artistRes: [],
-            playlist: [],
-            id: 0
+            playlist: []
         }
     }
 
@@ -35,9 +34,9 @@ export default class Search extends Component {
 
     addToPlaylist(a, b, c, d) {
         let id = this.state.playlist.id;
-
+        id = 0;
         let obj = { a: a, b: b, c: c, d: d, id }
-        console.log("a,b,c,d", a, b, c, d)
+        console.log(obj)
         let promise = axios.post('http://localhost:3001/api/playlist', obj)
         promise.then(res => {
             // console.log(res)
@@ -49,8 +48,8 @@ export default class Search extends Component {
     }
     removeFromPlaylist(eye) {
         console.log(eye)
-        let id = eye;
-        let promise = axios.delete(`/api/playlist/:${id}`)
+        // let id = eye;
+        let promise = axios.delete(`/api/playlist/${eye}`)
         promise.then(res => {
             console.log(res)
             this.setState({
@@ -62,7 +61,7 @@ export default class Search extends Component {
         let id = eye;
         console.log(id)
         let obj = { a: a, b: b, c: c, d: d}
-        let promise = axios.put(`/api/playlist/:${id}`,obj)
+        let promise = axios.put(`/api/playlist/up/${id}`,obj)
         promise.then(res => {
             this.setState({
                 playlist: res.data
@@ -73,7 +72,7 @@ export default class Search extends Component {
         let id = eye;
         console.log(id)
         let obj = { a: a, b: b, c: c, d: d}
-        let promise = axios.put(`/api/playlist/:${id}`,obj)
+        let promise = axios.put(`/api/playlist/down/${id}`,obj)
         promise.then(res => {
             this.setState({
                 playlist: res.data
@@ -86,6 +85,7 @@ export default class Search extends Component {
         let list = this.state.artistRes.map((e, i) => {
             return (
                 <div className='search-list' key={i}>
+                    <p>{e.id}</p>
                     <p>Artist: {e.artistName}</p>
                     <p>Title: {e.trackName}</p>
                     <p>Album: {e.collectionName}</p>

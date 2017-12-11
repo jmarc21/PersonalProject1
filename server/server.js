@@ -10,7 +10,8 @@ app.use(bodyParser.json())
 
 app.post('/api/playlist', controller.create)//add to my playlist
 app.get('/api/playlist', controller.read)//show my playlist
-app.put('/api/playlist/:id', controller.update)//update my playlist
+app.put('/api/playlist/up/:id', controller.updateup)//update my playlist
+app.put('/api/playlist/down/:id', controller.updatedown)//update my playlist
 app.delete('/api/playlist/:id', controller.remove)//delete from my playlist
 
 
