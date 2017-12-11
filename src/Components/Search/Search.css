@@ -1,0 +1,53 @@
+.screen{
+   
+}
+.search-input{
+    margin: 0 0 0 150px;
+    border-radius: 5px;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+ .list{
+    width: 30%;
+    height: 900px;
+    margin: 50px 0 0 150px;
+    color: gray;
+    border: 2px solid rgb(103, 100, 100);
+    border-radius: 4px;
+}
+.playlist{
+    position: absolute;
+    top: 220px;
+    right: 200px;
+    color: gray;
+    border: 2px solid rgb(103, 100, 100);
+    border-radius: 4px;
+}
+.playlist-title{
+    position: absolute;
+    top: 175px;
+    right: 400px;
+    color: gray;
+}
+.playlist-items{
+    color: gray;
+}
+.playlist-button{
+    background: none;
+    border: none;
+}
+.button-delete{
+    background: none;
+    border: none;
+}
+.button-up{
+    background: none;
+    border: none;
+}
+.button-down{
+    background: none;
+    border: none;
+}

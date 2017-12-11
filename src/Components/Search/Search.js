@@ -9,7 +9,8 @@ export default class Search extends Component {
             artistfirst: '',
             artistlast: '',
             artistRes: [],
-            playlist: []
+            playlist: [],
+            id: 0
         }
     }
 
@@ -20,38 +21,63 @@ export default class Search extends Component {
             artistfirst: val
 
         })
-        console.log(this.state.artistfirst)
-    }
-    updateArtistsLast(val) {
-        this.setState({
-            artistlast: val
-
-        })
-        console.log(this.state.artistlast)
     }
 
     getArtist() {
         let first = this.state.artistfirst;
-        let last = this.state.artistlast;
-        let promise = axios.get(`https://itunes.apple.com/search?term=${first}+${last}&music&limit=10`)
+        let promise = axios.get(`https://itunes.apple.com/search?term=${first}+&music&limit=10`)
         promise.then(res => {
             this.setState({
                 artistRes: res.data.results
             })
-             console.log(this.state.artistRes)
         })
     }
 
-    addToPlaylist(a,b,c,d) {
+    addToPlaylist(a, b, c, d) {
+        let id = this.state.playlist.id;
+
+        let obj = { a: a, b: b, c: c, d: d, id }
         console.log("a,b,c,d", a, b, c, d)
-        let obj = {a:a,b:b,c:c,d:d}
         let promise = axios.post('http://localhost:3001/api/playlist', obj)
+        promise.then(res => {
+            // console.log(res)
+            this.setState({
+                playlist: res.data
+            })
+            console.log(this.state.playlist)
+        })
+    }
+    removeFromPlaylist(eye) {
+        console.log(eye)
+        let id = eye;
+        let promise = axios.delete(`/api/playlist/:${id}`)
         promise.then(res => {
             console.log(res)
             this.setState({
                 playlist: res.data
             })
-             console.log(this.state.playlist)
+        })
+    }
+    moveUp(eye,a,b,c,d){
+        let id = eye;
+        console.log(id)
+        let obj = { a: a, b: b, c: c, d: d}
+        let promise = axios.put(`/api/playlist/:${id}`,obj)
+        promise.then(res => {
+            this.setState({
+                playlist: res.data
+            })
+        })
+    }
+    moveDown(eye,a,b,c,d){
+        let id = eye;
+        console.log(id)
+        let obj = { a: a, b: b, c: c, d: d}
+        let promise = axios.put(`/api/playlist/:${id}`,obj)
+        promise.then(res => {
+            this.setState({
+                playlist: res.data
+            })
         })
     }
 
@@ -59,36 +85,40 @@ export default class Search extends Component {
     render() {
         let list = this.state.artistRes.map((e, i) => {
             return (
-                <div key={i}>
+                <div className='search-list' key={i}>
                     <p>Artist: {e.artistName}</p>
                     <p>Title: {e.trackName}</p>
                     <p>Album: {e.collectionName}</p>
                     <p>Genre: {e.primaryGenreName}</p>
-                    <button onClick={() => this.addToPlaylist(e.artistName,e.trackName,e.collectionName,e.primaryGenreName)}>Add to playlist</button>
+                    <button className='playlist-button' onClick={() => this.addToPlaylist(e.artistName, e.trackName, e.collectionName, e.primaryGenreName)}>Add to playlist</button>
                 </div>
             )
         })
-        console.log(this.state.playlist.length!== 0 ? this.state.playlist.a: null)
-        console.log(this.state.playlist)
-        let playlist = this.state.playlist.map((e,eye)=>{
-            return(
-                <div key={eye}>
-                    <p>Artist: {e.a}</p>
-                    <p>Title: {e.b}</p>
-                    <p>Album: {e.c}</p>
-                    <p>Genre: {e.d}</p>
+        // console.log(this.state.playlist.length!== 0 ? this.state.playlist.a: null)
+        // console.log(this.state.playlist)
+        let playlist = this.state.playlist.map((e, eye) => {
+            return (
+                <div className='playlist-items' key={eye}>
+                    <div>Artist: {e.a}</div>
+                    <div>Title: {e.b}</div>
+                    <div>Album: {e.c}</div>
+                    <div>Genre: {e.d}</div>
+                    <button className='button-delete' onClick={() => this.removeFromPlaylist(eye)}>🚮</button>
+                    <button className='button-up' onClick={() => this.moveUp(eye,e.a,e.b,e.c,e.d)}>⬆️</button>
+                    <button className='button-down' onClick={() => this.moveDown(eye,e.a,e.b,e.c,e.d)}>⬇️</button>
                 </div>
             )
         })
 
         return (
-            <div>
-                <input onChange={e => this.updateArtistsFirst(e.target.value)} placeholder='Search For Artists First Name' />
-                <input onChange={e => this.updateArtistsLast(e.target.value)} placeholder='Search For Artists Last Name' />
-                <button onClick={() => this.getArtist()}>Search</button>
-                {list}
-                <h3>Playlist:</h3>
-                {playlist ? playlist : null}
+            <div className='screen'>
+                <input className='search-input' onChange={e => this.updateArtistsFirst(e.target.value)} placeholder='Search For Music' />
+                <button className='search-button' onClick={() => this.getArtist()}>Search</button>
+                <div className='content'>
+                    <p className='list'>{list}</p>
+                    <h3 className='playlist-title'>Playlist:</h3>
+                    <h6 className='playlist'>{playlist ? playlist : null}</h6>
+                </div>
             </div>
         )
     }
