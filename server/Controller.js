@@ -46,5 +46,9 @@ module.exports = {
         let p = Number(req.params.id);
         playlist.splice(p,1)
         res.status(200).send(playlist);
+    },
+    removeall: (req,res)=>{
+        playlist.splice(0,playlist.length);
+        res.status(200).send(playlist)
     }
 }

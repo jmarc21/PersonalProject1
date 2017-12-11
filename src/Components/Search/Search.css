@@ -1,7 +1,7 @@
 .search-input{
     position: fixed;
     top: 85px;
-    left: 525px;
+    left: 200px;
     width: 150px;
     height: 30px;
     border-radius: 10px;
@@ -42,7 +42,7 @@
 .playlist-title{
     position: absolute;
     top: 160px;
-    right: 520px;
+    left: 708px;
     color: gray;
 }
 .search-title{
@@ -61,9 +61,9 @@
     font-size: 20px;
 }
 .playlistload-button{
-    position: absolute;
-    top: 130px;
-    right: 260px;
+    position: fixed;
+    top: 85px;
+    right: 183px;
     width: 100px;
     height: 30px;
     border-radius: 20px;
@@ -72,14 +72,24 @@
 }
 .search-button{
     position: fixed;
-    top: 85px;
-    left: 676.5px;
+    top: 87px;
+    left: 354px;
     width: 80px;
     height: 30px;
     border-radius: 20px;
     border: none;
     background-color: rgb(182, 182, 182)
     
+}
+.clear-button{
+    position: fixed;
+    top: 85px;
+    right: 60px;
+    height: 30px;
+    width: 80px;
+    border: none;
+    border-radius: 20px;
+    background-color: rgb(182, 182, 182)
 }
 .button-delete{
     background: none;
@@ -99,4 +109,23 @@
 .search-fields{
     display: flex;
     justify-content: center;
+}
+.playlist-name{
+    position: fixed;
+    top: 85px;
+    left: 761px;
+    width: 150px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+}
+.playlist-name-button{
+    position: fixed;
+    top: 85px;
+    left: 915px;
+    height: 30px;
+    width: 80px;
+    border: none;
+    border-radius: 20px;
+    background-color: rgb(182, 182, 182)
 }

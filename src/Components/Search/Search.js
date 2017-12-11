@@ -9,7 +9,9 @@ export default class Search extends Component {
             artistfirst: '',
             artistlast: '',
             artistRes: [],
-            playlist: []
+            playlist: [],
+            playlistName: '',
+            name:[]
         }
     }
 
@@ -87,6 +89,24 @@ export default class Search extends Component {
             })
         })
     }
+    clearPlaylist(){
+        let promise = axios.delete('/api/playlist/all')
+        promise.then(res=>{
+            this.setState({
+                playlist: res.data
+            })
+        })
+    }
+    updatePlaylistName(val){
+        this.setState({
+            playlistName: val
+        })
+    }
+    namePlaylist(){
+        this.setState({
+            name: this.state.playlistName
+        })
+    }
 
     render() {
         let list = this.state.artistRes.map((e, i) => {
@@ -123,11 +143,14 @@ export default class Search extends Component {
                     <input className='search-input' onChange={e => this.updateArtistsFirst(e.target.value)} placeholder=' Search For Music' />
                     <button className='search-button' onClick={() => this.getArtist()}>Search</button>
                     <button className='playlistload-button' onClick={() => this.loadPlaylist()}>Load Playlist</button>
+                    <button className='clear-button' onClick={()=> this.clearPlaylist()}>Clear</button>
+                    <input className='playlist-name' onChange={ e => this.updatePlaylistName(e.target.value)} placeholder=' Playlist Name'/>
+                    <button className='playlist-name-button' onClick={()=> this.namePlaylist()}>Name</button>
                 </div>
                 <div className='content'>
                     <h3 className='search-title'>Search Results:</h3>
                     <p className='list'>{list}</p>
-                    <h3 className='playlist-title'>Playlist:</h3>
+                    <h3 className='playlist-title'>Playlist: {this.state.name}</h3>
                     <h6 className='playlist'>{playlist ? playlist : null}</h6>
                 </div>
             </div>
