@@ -117,7 +117,7 @@ export default class Search extends Component {
                     <p>Title: {e.trackName}</p>
                     <p>Album: {e.collectionName}</p>
                     <p>Genre: {e.primaryGenreName}</p>
-                    <button className='playlist-button' onClick={() => this.addToPlaylist(e.artistName, e.trackName, e.collectionName, e.primaryGenreName)}>✙</button>
+                    <button className='playlist-button' onClick={() => this.addToPlaylist(e.artistName, e.trackName, e.collectionName, e.primaryGenreName)}>✙ to {this.state.playlistName}</button>
                 </div>
             )
         })
@@ -150,7 +150,7 @@ export default class Search extends Component {
                 <div className='content'>
                     <h3 className='search-title'>Search Results:</h3>
                     <p className='list'>{list}</p>
-                    <h3 className='playlist-title'>Playlist: {this.state.name}</h3>
+                    <h3 className='playlist-title'>Playlist: {this.state.name}, with {this.state.playlist.length} killer songs!!</h3>
                     <h6 className='playlist'>{playlist ? playlist : null}</h6>
                 </div>
             </div>
