@@ -6,8 +6,7 @@ export default class Header extends Component{
         return(
             <section>
                 <h1 className='main-title'>Create A Playlist</h1>
-                {<div className='astronaut'>👨🏼‍🚀</div>}
-                {/* <div className='rocket'>🚀</div> */}
+                <div className='astronaut'>👨🏼‍🚀</div>
             </section>
         )
     }

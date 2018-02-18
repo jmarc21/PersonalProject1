@@ -6,6 +6,7 @@
     height: 30px;
     border-radius: 10px;
     border: none;
+    z-index: 3;
 }
 .content{
     display: block;
@@ -70,6 +71,7 @@
     border-radius: 20px;
     border: none;
     background-color: rgb(182, 182, 182);
+    z-index: 3;
 }
 .search-button{
     position: fixed;
@@ -79,7 +81,8 @@
     height: 30px;
     border-radius: 20px;
     border: none;
-    background-color: rgb(182, 182, 182)
+    background-color: rgb(182, 182, 182);
+    z-index: 3;
     
 }
 .clear-button{
@@ -90,7 +93,8 @@
     width: 80px;
     border: none;
     border-radius: 20px;
-    background-color: rgb(182, 182, 182)
+    background-color: rgb(182, 182, 182);
+    z-index: 3;
 }
 .button-delete{
     background: none;
@@ -119,6 +123,7 @@
     height: 30px;
     border-radius: 10px;
     border: none;
+    z-index: 3;
 }
 .playlist-name-button{
     position: fixed;
@@ -129,4 +134,5 @@
     border: none;
     border-radius: 20px;
     background-color: rgb(182, 182, 182);
+    z-index: 3;
 }
