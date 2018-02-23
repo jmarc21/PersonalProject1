@@ -8,15 +8,17 @@
     border: none;
     z-index: 3;
 }
+.search-input:focus{
+    outline: none;
+}
 .content{
-    display: block;
-    
+    display: block
 }
  .list{
     position: static;
     float: left;
     width: 40%;
-    height: 900px;
+    min-height: 900px;
     color: rgb(255, 255, 255);
     border: 2px solid rgb(103, 100, 100);
     border-radius: 4px;
@@ -27,7 +29,7 @@
     box-shadow: 10px 15px #000000;
 }
 .playlist{
-    height: 900px;
+    min-height: 900px;
     width: 40%;
     float: right;
     color: rgb(255, 255, 255);
@@ -61,6 +63,13 @@
     color: rgb(218, 218, 218);
     font-size: 15px;
     margin: 2px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px silver,
+    1px 1px 1px silver;
+    margin-bottom: 5px;
+}
+.playlist-button:focus{
+    outline: none;
 }
 .playlistload-button{
     position: fixed;
@@ -72,6 +81,9 @@
     border: none;
     background-color: rgb(182, 182, 182);
     z-index: 3;
+}
+.playlistload-button:focus{
+    outline: none;
 }
 .search-button{
     position: fixed;
@@ -85,6 +97,9 @@
     z-index: 3;
     
 }
+.search-button:focus{
+    outline: none;
+}
 .clear-button{
     position: fixed;
     top: 85px;
@@ -96,20 +111,32 @@
     background-color: rgb(182, 182, 182);
     z-index: 3;
 }
+.clear-button{
+    outline: none;
+}
 .button-delete{
     background: none;
     border: none;
-    font-size: 25px
+    font-size: 15px
+}
+.button-delete{
+    outline: none;
 }
 .button-up{
     background: none;
     border: none;
-    font-size: 25px;
+    font-size: 15px;
+}
+.button-up:focus{
+    outline: none;
 }
 .button-down{
     background: none;
     border: none;
-    font-size: 25px;
+    font-size: 15px;
+}
+.button-down:focus{
+    outline: none;
 }
 .search-fields{
     display: flex;
@@ -125,6 +152,9 @@
     border: none;
     z-index: 3;
 }
+.playlist-name:focus{
+    outline: none;
+}
 .playlist-name-button{
     position: fixed;
     top: 85px;
@@ -135,4 +165,7 @@
     border-radius: 20px;
     background-color: rgb(182, 182, 182);
     z-index: 3;
+}
+.playlist-name-button:focus{
+    outline: none;
 }

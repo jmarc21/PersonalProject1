@@ -39,13 +39,12 @@ export default class Search extends Component {
         id = 0;
         let obj = { a: a, b: b, c: c, d: d, id }
         console.log(obj)
-        let promise = axios.post('http://localhost:3001/api/playlist', obj)
+        let promise = axios.post('http://localhost:3003/api/playlist', obj)
         promise.then(res => {
             // console.log(res)
             this.setState({
                 playlist: res.data
             })
-            console.log(this.state.playlist)
         })
     }
     removeFromPlaylist(eye) {
@@ -117,7 +116,7 @@ export default class Search extends Component {
                     <p>Title: {e.trackName}</p>
                     <p>Album: {e.collectionName}</p>
                     <p>Genre: {e.primaryGenreName}</p>
-                    <button className='playlist-button' onClick={() => this.addToPlaylist(e.artistName, e.trackName, e.collectionName, e.primaryGenreName)}>✙ to {this.state.playlistName}</button>
+                    <button className='playlist-button' onClick={() => this.addToPlaylist(e.artistName, e.trackName, e.collectionName, e.primaryGenreName)}>Add to {this.state.playlistName}</button>
                 </div>
             )
         })
@@ -130,9 +129,9 @@ export default class Search extends Component {
                     <div>Title: {e.b}</div>
                     <div>Album: {e.c}</div>
                     <div>Genre: {e.d}</div>
-                    <button className='button-delete' onClick={() => this.removeFromPlaylist(eye)}>🚮</button>
-                    <button className='button-up' onClick={() => this.moveUp(eye, e.a, e.b, e.c, e.d)}>⬆️</button>
-                    <button className='button-down' onClick={() => this.moveDown(eye, e.a, e.b, e.c, e.d)}>⬇️</button>
+                    <button className='button-delete' onClick={() => this.removeFromPlaylist(eye)}>Delete</button>
+                    <button className='button-up' onClick={() => this.moveUp(eye, e.a, e.b, e.c, e.d)}>Move Up</button>
+                    <button className='button-down' onClick={() => this.moveDown(eye, e.a, e.b, e.c, e.d)}>Move Down</button>
                 </div>
             )
         })
