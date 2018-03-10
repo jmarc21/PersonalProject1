@@ -5,6 +5,7 @@ const port = 3003;
 const controller = require('./Controller')
 const cors = require('cors')
 
+app.use( express.static( `${__dirname}/../build` ) );
 app.use(cors())
 app.use(bodyParser.json())
 
@@ -17,7 +18,9 @@ app.delete('/api/playlist/:id', controller.remove)//delete from my playlist
 
 
 
-
+app.get('*', (req, res)=>{
+    res.sendFile(path.join(__dirname, '../build/index.html'));
+});
 
 
 app.listen(port, ()=>{
