@@ -7,6 +7,8 @@
 
 <a href="https://www.youtube.com/watch?v=Q9a9qBPKd_w">Link to video tutorial</a>
 
+<img src"./images/screenshot.png">
+
 <h3>- Tech Used<h3>
 
 <ul>
