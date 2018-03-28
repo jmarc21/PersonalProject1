@@ -1,6 +1,6 @@
 Create A Playlist Project
 
-##Description
+<h1>Description</h1>
 
 Create-A-Playlist is a Web Application where users can search for tracks and add them to a playlist. Users can also rearange the tracks in the playlist as well as remove them from the playlist.
 
