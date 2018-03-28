@@ -11,5 +11,7 @@
 <h3>Tech Used<h3>
 
 <ul>
-  <li>React</li>
+  <li>Built with React, Node, JavaScript, HTML, CSS.</li>
+  <li>Using Axios users can search the iTunes API to get track data.</li>
+  <li>Using Node those tracks then can be added, reorderd, and deleted from a playlist.</li>
 </ul>
