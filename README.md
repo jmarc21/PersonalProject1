@@ -10,6 +10,6 @@
 
 <h3>Tech Used<h3>
 
-    <ul>
-      <li>React</li>
-    </ul>
+<ul>
+  <li>React</li>
+</ul>
