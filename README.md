@@ -3,11 +3,13 @@
 
 <h3>- Description</h3>
 
-<p><strong>Create-A-Playlist is a Web Application where users can search for tracks and add them to a playlist. Users can also rearange the tracks in the playlist as well as remove them from the playlist.</strong></p>
+<p>Create-A-Playlist is a Web Application where users can search for tracks and add them to a playlist. Users can also rearange the tracks in the playlist as well as remove them from the playlist.</p>
 
-<a href="https://www.youtube.com/watch?v=Q9a9qBPKd_w">Link to video tutorial</a>
+<a href="https://www.youtube.com/watch?v=Q9a9qBPKd_w">**Link to video tutorial**</a>
 
 <img src="./images/screenshot.png">
+
+<p>Screenshot showing the app with songs added to the playlist and an artist searched.</p>
 
 <h3>- Tech Used<h3>
 
