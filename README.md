@@ -8,7 +8,7 @@
 
 <img src="./images/screenshot.png">
 
-<div>Screenshot showing the app with songs added to the playlist and an genre searched. With the search option you can search album name, artist name, song title, and genre.</div>
+<p>Screenshot showing the app with songs added to the playlist and an genre searched. With the search option you can search album name, artist name, song title, and genre.</p>
 
 <h3>- Tech Used<h3>
 <ul>
